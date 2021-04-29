@@ -4,35 +4,53 @@ namespace application\lib;
 
 use PDO;
 
-class Db {
+class Db
+{
 
 	protected $db;
-	
-	public function __construct() {
+
+	public function __construct()
+	{
 		$config = require 'application/config/db.php';
-		$this->db = new PDO('mysql:host='.$config['host'].';dbname='.$config['name'].'', $config['user'], $config['password']);
+		$this->db = new PDO('mysql:host=' . $config['host'] . ';dbname=' . $config['name'] . ';charset=utf8mb4' . '', $config['user'], $config['password']);
 	}
 
-	public function query($sql, $params = []) {
+	public function query($sql, $params = [])
+	{
 		$stmt = $this->db->prepare($sql);
 		if (!empty($params)) {
 			foreach ($params as $key => $val) {
-				$stmt->bindValue(':'.$key, $val);
+				if (is_int($val)) {
+					$type = PDO::PARAM_INT;
+				} else {
+					$type = PDO::PARAM_STR;
+				}
+				$stmt->bindValue(':' . $key, $val, $type);
 			}
 		}
 		$stmt->execute();
 		return $stmt;
 	}
 
-	public function row($sql, $params = []) {
+	public function row($sql, $params = [])
+	{
 		$result = $this->query($sql, $params);
-		return $result->fetchAll(PDO::FETCH_ASSOC);
+		return $result->fetchAll(PDO::FETCH_OBJ);
 	}
 
-	public function column($sql, $params = []) {
+	public function first($sql, $params = [])
+	{
+		$result = $this->query($sql, $params);
+		return $result->fetch(PDO::FETCH_OBJ);
+	}
+
+	public function column($sql, $params = [])
+	{
 		$result = $this->query($sql, $params);
 		return $result->fetchColumn();
 	}
-
-
+	public function lastInsertId()
+	{
+		return $this->db->lastInsertId();
+	}
 }

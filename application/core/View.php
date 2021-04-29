@@ -12,13 +12,13 @@ class View
 	public function __construct($route)
 	{
 		$this->route = $route;
-		$this->path = $route['controller'] . '/' . $route['action'];
 	}
 
-	public function render($title, $vars = [])
+	public function render($view = null, $title, $vars = [])
 	{
 		extract($vars);
-		$path = 'application/views/' . $this->path . '.php';
+		$this->setPath($view);
+		$path = 'application/views/' . $this->getPath() . '.php';
 		if (file_exists($path)) {
 			ob_start();
 			require $path;
@@ -27,6 +27,18 @@ class View
 		}
 	}
 
+	private function setPath($view)
+	{
+		if ($view == null) {
+			$this->path = $this->route['controller'] . '/' . $this->route['action'];
+		} else {
+			$this->path = $view;
+		}
+	}
+	private function getPath()
+	{
+		return $this->path;
+	}
 	public function redirect($url)
 	{
 		header('location: ' . $url);

@@ -2,7 +2,7 @@
 
 return [
 	'all' => [
-		'index',
+		'index', 'store'
 	],
 	'authorize' => [
 		//

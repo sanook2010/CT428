@@ -8,7 +8,7 @@ return [
 		//
 	],
 	'guest' => [
-		'register',
+		'loginIndex',
 		'login',
 	],
 	'admin' => [
