@@ -28,6 +28,7 @@ return [
 		'action' => 'index',
 	],
 
+	//Category
 	'admin/categories' => [
 		'controller' => 'adminCategory',
 		'action' => 'index',
@@ -40,5 +41,16 @@ return [
 		'controller' => 'adminCategory',
 		'action' => 'store',
 	],
-
+	'admin/categories/edit/{id:\d+}' => [
+		'controller' => 'adminCategory',
+		'action' => 'edit',
+	],
+	'admin/categories/update/{id:\d+}' => [
+		'controller' => 'adminCategory',
+		'action' => 'update',
+	],
+	'admin/categories/destroy/{id:\d+}' => [
+		'controller' => 'adminCategory',
+		'action' => 'destroy',
+	],
 ];

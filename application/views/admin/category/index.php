@@ -1,5 +1,5 @@
 <a href="/admin/categories/create">
-    <button class="bg-pink-400 p-3 text-white"><i class="fas fa-plus"></i> Thêm danh mục</button>
+    <button class="bg-purple-400 p-3 text-white"><i class="fas fa-plus"></i> Thêm danh mục</button>
 </a>
 
 <?php require "application/views/components/message.php"; ?>
@@ -25,12 +25,16 @@
                         </td>
                         <td class="px-4 py-3 text-sm">
                             <div class="flex items-center space-x-4 text-sm">
-                                <button class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-pink-400 rounded-lg  focus:outline-none focus:shadow-outline-gray">
-                                    <i class="fas fa-pen"></i>
-                                </button>
-                                <button class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-pink-400 rounded-lg  focus:outline-none focus:shadow-outline-gray">
-                                    <i class="fas fa-trash"></i>
-                                </button>
+                                <a href="/admin/categories/edit/<?= $category->MaLoaiHang ?>">
+                                    <button class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-400 rounded-lg  focus:outline-none focus:shadow-outline-gray">
+                                        <i class="fas fa-pen"></i>
+                                    </button>
+                                </a>
+                                <a href="/admin/categories/destroy/<?= $category->MaLoaiHang ?>">
+                                    <button class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-400 rounded-lg  focus:outline-none focus:shadow-outline-gray">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </a>
                             </div>
                         </td>
                     </tr>

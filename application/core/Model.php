@@ -3,6 +3,7 @@
 namespace application\core;
 
 use application\lib\Db;
+use application\core\View;
 
 abstract class Model
 {
@@ -39,7 +40,35 @@ abstract class Model
 		$columnString = implode(', ', array_keys($data));
 		$valueString = ":" . implode(', :', array_flip($data));
 		return $this->db->query("INSERT INTO `{$this->table}` ({$columnString}) VALUES ({$valueString})", $data);
-		// $lastInsertId = $this->db->lastInsertId();
-		// return $lastInsertId;
+	}
+
+	public function findOrFail($id)
+	{
+		$result = $this->db->first("SELECT * FROM `$this->table` WHERE `{$this->primary_key}` = {$id}");
+		if ($result != null) {
+			return $result;
+		}
+		return View::errorCode(404);
+	}
+
+	public function update($params, $id)
+	{
+		$setStr = "";
+
+
+		$params[$this->primary_key] = $id;
+
+		foreach ($params as $key => $value) {
+			$setStr .= "`{$key}` = :{$key},";
+		}
+
+		$setStr = rtrim($setStr, ",");
+		$this->db->query("UPDATE `$this->table` SET $setStr WHERE `{$this->primary_key}` = :{$this->primary_key}", $params);
+	}
+
+	public function destroy($id)
+	{
+		$params[$this->primary_key] = $id;
+		$this->db->query("DELETE FROM `{$this->table}` WHERE `{$this->primary_key}` = :{$this->primary_key}", $params);
 	}
 }

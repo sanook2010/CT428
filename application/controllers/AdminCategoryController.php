@@ -31,11 +31,35 @@ class AdminCategoryController extends Controller
     public function storeAction()
     {
         $input = [
-            "MaLoaiHang" => $this->request->post("MaLoaiHang"),
             "TenLoaiHang" => $this->request->post("TenLoaiHang")
         ];
-        $this->category->insert($input);
+        var_dump($this->category->insert($input));
         $_SESSION['message'] = 'Đăng loại hàng thành công';
+        $this->view->redirect('/admin/categories');
+    }
+    public function editAction()
+    {
+        $category = $this->category->findOrFail($this->route['id']);
+        $data = [
+            'category' => $category,
+        ];
+        $this->view->render('admin/category/edit', 'Sửa danh mục', $data);
+    }
+    public function updateAction()
+    {
+        $input = [
+            "TenLoaiHang" => $this->request->post("TenLoaiHang")
+        ];
+
+        $this->category->update($input, $this->route['id']);
+        $_SESSION['message'] = 'Sửa loại hàng thành công';
+        $this->view->redirect('/admin/categories');
+    }
+
+    public function destroyAction()
+    {
+        $this->category->destroy($this->route['id']);
+        $_SESSION['message'] = 'Xoá loại hàng thành công';
         $this->view->redirect('/admin/categories');
     }
 }

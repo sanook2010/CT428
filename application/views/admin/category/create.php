@@ -12,7 +12,7 @@
             <input class="block w-full mt-1 text-sm border-gray-400	 border-2 rounded focus:outline-none  p-2" required name="TenLoaiHang" placeholder="Apple">
         </label>
 
-        <button class="mt-4 bg-pink-400 p-2 text-white" type="submit">
+        <button class="mt-4 bg-purple-400 p-2 text-white" type="submit">
             Thêm sản phẩm
         </button>
     </form>

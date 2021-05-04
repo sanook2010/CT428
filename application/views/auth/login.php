@@ -15,7 +15,7 @@
                     <input type="password" name="MatKhau" class="block w-full mt-1 border-2 rounded border-gray-400 p-1">
                 </div>
                 <div class="block mt-4 text-sm">
-                    <button type="submit" class="w-full bg-pink-400 p-4 rounded text-white">
+                    <button type="submit" class="w-full bg-purple-400 p-4 rounded text-white">
                         Đăng nhập
                     </button>
                 </div>
