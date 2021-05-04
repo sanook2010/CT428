@@ -53,4 +53,31 @@ return [
 		'controller' => 'adminCategory',
 		'action' => 'destroy',
 	],
+
+
+	//Staff
+	'admin/staffs' => [
+		'controller' => 'adminStaff',
+		'action' => 'index',
+	],
+	'admin/staffs/create' => [
+		'controller' => 'adminStaff',
+		'action' => 'create',
+	],
+	'admin/staffs/store' => [
+		'controller' => 'adminStaff',
+		'action' => 'store',
+	],
+	'admin/staffs/edit/{id:\d+}' => [
+		'controller' => 'adminStaff',
+		'action' => 'edit',
+	],
+	'admin/staffs/update/{id:\d+}' => [
+		'controller' => 'adminStaff',
+		'action' => 'update',
+	],
+	'admin/staffs/destroy/{id:\d+}' => [
+		'controller' => 'adminStaff',
+		'action' => 'destroy',
+	],
 ];

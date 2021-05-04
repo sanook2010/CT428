@@ -39,11 +39,15 @@
                         </li>
                     </ul>
                 </template>
-                <!-- <a href="/admin" class="inline-flex items-center w-full text-sm font-semibold">
-                    <i class="fas fa-shopping-cart"></i><span class="ml-4">Sản phẩm</span>
-                </a> -->
             </li>
-
+            <li class="relative px-6 py-3">
+                <?php if ($this->route['controller'] == "adminStaff") : ?>
+                    <div class="absolute inset-y-0 left-0 w-1 bg-purple-400 rounded-tr-lg rounded-br-lg"></div>
+                <?php endif; ?>
+                <a href="/admin/staffs" class="inline-flex items-center w-full text-sm font-semibold">
+                    <i class="fas fa-users"></i><span class="ml-4">Nhân viên</span>
+                </a>
+            </li>
         </ul>
     </div>
 </aside>
