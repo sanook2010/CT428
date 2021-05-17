@@ -33,7 +33,7 @@ class AdminCategoryController extends Controller
         $input = [
             "TenLoaiHang" => $this->request->post("TenLoaiHang")
         ];
-        var_dump($this->category->insert($input));
+        $this->category->insert($input);
         $_SESSION['message'] = 'Đăng loại hàng thành công';
         $this->view->redirect('/admin/categories');
     }

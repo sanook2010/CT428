@@ -37,8 +37,8 @@ class AdminStaffController extends Controller
             "SoDienThoai"   => $this->request->post("SoDienThoai"),
             "MatKhau"       => password_hash($this->request->post("MatKhau"), PASSWORD_DEFAULT),
         ];
-        var_dump($this->staff->insert($input));
-        $_SESSION['message'] = 'Đăng loại hàng thành công';
+        $this->staff->insert($input);
+        $_SESSION['message'] = 'Đăng nhân viên thành công';
         $this->view->redirect('/admin/staffs');
     }
     public function editAction()
@@ -62,14 +62,14 @@ class AdminStaffController extends Controller
         }
 
         $this->staff->update($input, $this->route['id']);
-        $_SESSION['message'] = 'Sửa loại hàng thành công';
+        $_SESSION['message'] = 'Sửa nhân viên thành công';
         $this->view->redirect('/admin/staffs');
     }
 
     public function destroyAction()
     {
         $this->staff->destroy($this->route['id']);
-        $_SESSION['message'] = 'Xoá loại hàng thành công';
+        $_SESSION['message'] = 'Xoá nhân viên thành công';
         $this->view->redirect('/admin/staffs');
     }
 }

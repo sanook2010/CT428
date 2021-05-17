@@ -1,23 +1,35 @@
-<?php require "application/views/components/message.php"; ?>
-<section id="form" class="max-w-screen-sm mx-auto p-4">
-    <h1 class="font-bold">CÂU HỎI ẨN DANH</h1>
-    <div class="h-1 w-20 bg-purple-400 rounded"></div>
-    <div class="mt-2">
-        <form action="/store" method="POST">
-            <textarea class="h-32 w-full resize-none border rounded-md p-4" name="content" required placeholder="Đặt câu hỏi ở đây"></textarea>
-            <button class="p-4 bg-purple-400 mt-2 text-white" type="submit">Đặt câu hỏi</button>
-        </form>
-    </div>
-</section>
-<section class="max-w-screen-sm mx-auto p-4 mt-2">
-    <h1 class="font-bold">CÂU TRẢ LỜI TỪ KHOA</h1>
-    <div class="h-1 w-20 bg-purple-400 rounded"></div>
-    <div class="mt-2">
-        <?php foreach ($messages as $message) : ?>
-            <div class="mt-4 border-b-2 pb-4">
-                <h2 class=" text-2xl font-medium text-gray-900 title-font mb-2"><?= $message['content'] ?></h2>
-                <p class="leading-relaxed"><?= $message['reply'] ?></p>
+<?php require "application/views/components/header.php"; ?>
+<?php require "application/views/components/banner.php"; ?>
+<div class="container mt-4">
+
+    <div class="pb-20 md:pb-24 lg:pb-32">
+        <div class="flex flex-col sm:flex-row justify-between items-center sm:pb-4 lg:pb-0 mb-12 sm:mb-10">
+            <div class="text-center sm:text-left">
+                <h2 class=" font-butler  text-secondary text-3xl md:text-4xl lg:text-4.5xl">Điện thoại</h2>
+                <p class="text-gray-500 text-lg md:text-xl pt-2">Săn sales mỗi ngày!</p>
             </div>
-        <?php endforeach; ?>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-4">
+            <?php foreach ($products as $product) : ?>
+                <div class="relative sm:px-5 lg:px-4">
+                    <div class="relative rounded flex justify-center items-center">
+                        <div class="aspect-w-1 aspect-h-1 w-full">
+                            <img src="<?= $product->HinhAnh ?>">
+                        </div>
+                        <!-- <div class="absolute top-0 right-0 bg-white px-5 py-1 m-4 rounded-full">
+                            <p class="text-v-blue font-hk font-bold text-sm uppercase tracking-wide">
+                                trend
+                            </p>
+                        </div> -->
+                    </div>
+                    <a class="flex justify-between items-center pt-6">
+                        <div>
+                            <h3 class="text-base text-secondary"><?= $product->TenHH ?></h3>
+                        </div>
+                        <span class="text-primary text-xl"><?= number_format($product->Gia, 0, ',', '.') ?></span>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
-</section>
+</div>

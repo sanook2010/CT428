@@ -16,16 +16,33 @@
 		body {
 			font-family: Be Vietnam, sans-serif;
 		}
+
+		.container {
+			padding-left: 1rem;
+			padding-right: 1rem;
+			margin-right: auto;
+			margin-left: auto;
+		}
 	</style>
 	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 </head>
 
-<body class="bg-gray-100">
+<body class="">
+	<div class="main">
+		<?php echo $content; ?>
+	</div>
 
-	<?php echo $content; ?>
 	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script>
+		var swiper = new Swiper(".swipperBanner", {
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+	</script>
 </body>
 
 </html>

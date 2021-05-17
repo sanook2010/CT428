@@ -80,4 +80,30 @@ return [
 		'controller' => 'adminStaff',
 		'action' => 'destroy',
 	],
+
+	//Staff
+	'admin/products' => [
+		'controller' => 'adminProduct',
+		'action' => 'index',
+	],
+	'admin/products/create' => [
+		'controller' => 'adminProduct',
+		'action' => 'create',
+	],
+	'admin/products/store' => [
+		'controller' => 'adminProduct',
+		'action' => 'store',
+	],
+	'admin/products/edit/{id:\d+}' => [
+		'controller' => 'adminProduct',
+		'action' => 'edit',
+	],
+	'admin/products/update/{id:\d+}' => [
+		'controller' => 'adminProduct',
+		'action' => 'update',
+	],
+	'admin/products/destroy/{id:\d+}' => [
+		'controller' => 'adminProduct',
+		'action' => 'destroy',
+	],
 ];

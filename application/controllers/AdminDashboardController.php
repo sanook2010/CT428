@@ -11,6 +11,7 @@ class AdminDashboardController extends Controller
         parent::__construct($route);
         $this->view->layout = 'admin';
     }
+
     public function indexAction()
     {
         $this->view->render('admin/dashboard/index', 'Dashboard');
