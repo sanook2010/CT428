@@ -1,4 +1,4 @@
-<?php require "application/views/components/header.php"; ?>
+
 <?php require "application/views/components/banner.php"; ?>
 <div class="container mt-4">
 
@@ -9,26 +9,27 @@
                 <p class="text-gray-500 text-lg md:text-xl pt-2">Săn sales mỗi ngày!</p>
             </div>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-4">
+        <div class="grid grid-cols-2 lg:grid-cols-4">
             <?php foreach ($products as $product) : ?>
-                <div class="relative sm:px-5 lg:px-4">
-                    <div class="relative rounded flex justify-center items-center">
-                        <div class="aspect-w-1 aspect-h-1 w-full">
-                            <img src="<?= $product->HinhAnh ?>">
+            
+                <div class="relative p-2 md:p-4">
+                    <a href="/products/<?= $product->MSHH ?>">
+                        <div class="relative rounded flex justify-center items-center">
+                            <div class="aspect-w-1 aspect-h-1 w-full">
+                                <img src="<?= $product->HinhAnh ?>">
+                            </div>
                         </div>
-                        <!-- <div class="absolute top-0 right-0 bg-white px-5 py-1 m-4 rounded-full">
-                            <p class="text-v-blue font-hk font-bold text-sm uppercase tracking-wide">
-                                trend
-                            </p>
-                        </div> -->
-                    </div>
-                    <a class="flex justify-between items-center pt-6">
+                    </a>
+                    <a class="flex flex-col sm:flex-row justify-between items-center pt-6">
                         <div>
                             <h3 class="text-base text-secondary"><?= $product->TenHH ?></h3>
                         </div>
-                        <span class="text-primary text-xl"><?= number_format($product->Gia, 0, ',', '.') ?></span>
+                        <span class="text-primary text-xl">
+                            <?= number_format($product->Gia, 0, ',', '.') ?>
+                        </span>
                     </a>
                 </div>
+            
             <?php endforeach; ?>
         </div>
     </div>

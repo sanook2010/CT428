@@ -44,3 +44,6 @@
         </button>
     </form>
 </div>
+<script>
+CKEDITOR.replace( 'GhiChu' );
+</script>

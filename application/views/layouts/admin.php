@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" x-data="data()">
+<html lang="vi" x-data="data()">
 
 <head>
     <!-- Required meta tags -->
@@ -17,6 +17,8 @@
         }
     </style>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+
     <script>
         function data() {
             return {

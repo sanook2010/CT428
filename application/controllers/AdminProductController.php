@@ -50,4 +50,30 @@ class AdminProductController extends Controller
         // $_SESSION['message'] = 'Đăng sản phẩm thành công';
         // $this->view->redirect('/admin/products');
     }
+    public function editAction()
+    {
+        $categories = $this->category->all();
+        $product = $this->product->findOrFail($this->route['id']);
+        $data = [
+            'product' => $product,
+            'categories' => $categories,
+        ];
+        $this->view->render('admin/product/edit', 'Sửa sản phẩm', $data);
+    }
+    public function updateAction()
+    {
+        $input = [
+           
+            "TenHH"     => $this->request->post("TenHH"),
+            "Gia"       => $this->request->post("Gia"),
+            "SoLuongHang"      => $this->request->post("SoLuongHang"),
+            "MaLoaiHang"      => $this->request->post("MaLoaiHang"),
+            "QuyCach"      => $this->request->post("QuyCach"),
+            "GhiChu"      => $this->request->post("GhiChu"),
+        ];
+
+        $this->product->update($input, $this->route['id']);
+        $_SESSION['message'] = 'Sửa loại hàng thành công';
+        $this->view->redirect('/admin/products/');
+    }
 }

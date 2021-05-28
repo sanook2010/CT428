@@ -7,6 +7,17 @@ return [
 		'action' => 'index',
 	],
 
+	'products/{id:\d+}' => [
+		'controller' => 'product',
+		'action' => 'show',
+	],
+	
+	'products' => [
+		'controller' => 'product',
+		'action' => 'index',
+	],
+	
+
 
 	// auth
 	'admin/login' => [

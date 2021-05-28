@@ -3,15 +3,15 @@
 
  Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 100417
+ Source Server Version : 100419
  Source Host           : localhost:3306
  Source Schema         : ct428
 
  Target Server Type    : MySQL
- Target Server Version : 100417
+ Target Server Version : 100419
  File Encoding         : 65001
 
- Date: 18/05/2021 22:31:25
+ Date: 21/05/2021 17:42:10
 */
 
 SET NAMES utf8mb4;
@@ -23,15 +23,15 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `chitietdathang`;
 CREATE TABLE `chitietdathang`  (
   `SoDonDH` int NOT NULL,
-  `MSHH` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `MSHH` int NOT NULL,
   `SoLuong` int NOT NULL,
   `GiaDatHang` int UNSIGNED NULL DEFAULT NULL,
   `GiamGia` int UNSIGNED NULL DEFAULT NULL,
   PRIMARY KEY (`SoDonDH`, `MSHH`) USING BTREE,
   INDEX `MSHH`(`MSHH`) USING BTREE,
-  CONSTRAINT `chitietdathang_ibfk_1` FOREIGN KEY (`SoDonDH`) REFERENCES `dathang` (`SoDonDH`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `chitietdathang_ibfk_2` FOREIGN KEY (`MSHH`) REFERENCES `hanghoa` (`MSHH`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+  CONSTRAINT `chitietdathang_ibfk_1` FOREIGN KEY (`SoDonDH`) REFERENCES `dathang` (`SoDonDH`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `chitietdathang_ibfk_2` FOREIGN KEY (`MSHH`) REFERENCES `hanghoa` (`MSHH`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of chitietdathang
@@ -52,7 +52,7 @@ CREATE TABLE `dathang`  (
   INDEX `MSNV`(`MSNV`) USING BTREE,
   CONSTRAINT `dathang_ibfk_1` FOREIGN KEY (`MSKH`) REFERENCES `khachhang` (`MSKH`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `dathang_ibfk_2` FOREIGN KEY (`MSNV`) REFERENCES `nhanvien` (`MSNV`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of dathang
@@ -69,7 +69,7 @@ CREATE TABLE `diachikh`  (
   PRIMARY KEY (`MaDC`) USING BTREE,
   INDEX `MSKH`(`MSKH`) USING BTREE,
   CONSTRAINT `diachikh_ibfk_1` FOREIGN KEY (`MSKH`) REFERENCES `khachhang` (`MSKH`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of diachikh
@@ -80,7 +80,7 @@ CREATE TABLE `diachikh`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `hanghoa`;
 CREATE TABLE `hanghoa`  (
-  `MSHH` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `MSHH` int NOT NULL,
   `TenHH` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `QuyCach` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `Gia` int UNSIGNED NOT NULL,
@@ -91,16 +91,16 @@ CREATE TABLE `hanghoa`  (
   PRIMARY KEY (`MSHH`) USING BTREE,
   INDEX `MaLoaiHang`(`MaLoaiHang`) USING BTREE,
   CONSTRAINT `hanghoa_ibfk_1` FOREIGN KEY (`MaLoaiHang`) REFERENCES `loaihanghoa` (`MaLoaiHang`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of hanghoa
 -- ----------------------------
-INSERT INTO `hanghoa` VALUES ('iphone-12-pro-max-256', 'iPhone 12 Pro Max 256GB ', 'cái', 35190000, 100, 1, 'a', 'https://cdn.tgdd.vn/Products/Images/42/228743/iphone-12-pro-max-256gb-1-org.jpg');
-INSERT INTO `hanghoa` VALUES ('samsung-galaxy-note-20', 'Samsung Galaxy Note 20', 'cái', 15990000, 100, 2, 'Điện thoại Samsung Galaxy S21 5G', 'https://cdn.tgdd.vn/Products/Images/42/218355/samsung-galaxy-note-20-vang-dong-1-org.jpg');
-INSERT INTO `hanghoa` VALUES ('samsung-galaxy-s21-5g ', 'Samsung Galaxy S21 5G ', 'cái', 20990000, 1000, 2, 'Điện thoại Samsung Galaxy S21 5G', 'https://cdn.tgdd.vn/Products/Images/42/218355/samsung-galaxy-note-20-vang-dong-1-org.jpg');
-INSERT INTO `hanghoa` VALUES ('vivo-y20s', 'Vivo Y20s', 'cái', 4690000, 1000, 7, 'a', 'https://cdn.tgdd.vn/Products/Images/42/228376/vivo-y20s-xanh-duong-1-org.jpg');
-INSERT INTO `hanghoa` VALUES ('xiaomi-mi-11-lite-4g', 'Xiaomi Mi 11 Lite', 'cái', 1000000, 100, 3, 'a', 'https://cdn.tgdd.vn/Products/Images/42/233241/xiaomi-mi-11-lite-4g-xanh-duong-1-org.jpg');
+INSERT INTO `hanghoa` VALUES (1, 'iPhone 12 Pro Max 256GB ', 'cái', 35190000, 100, 1, 'a', 'https://cdn.tgdd.vn/Products/Images/42/228743/iphone-12-pro-max-256gb-1-org.jpg');
+INSERT INTO `hanghoa` VALUES (2, 'Samsung Galaxy Note 20', 'cái', 15990000, 100, 2, 'Điện thoại Samsung Galaxy S21 5G', 'https://cdn.tgdd.vn/Products/Images/42/218355/samsung-galaxy-note-20-vang-dong-1-org.jpg');
+INSERT INTO `hanghoa` VALUES (3, 'Samsung Galaxy S21 5G ', 'cái', 20990000, 1000, 2, 'Điện thoại Samsung Galaxy S21 5G', 'https://cdn.tgdd.vn/Products/Images/42/218355/samsung-galaxy-note-20-vang-dong-1-org.jpg');
+INSERT INTO `hanghoa` VALUES (4, 'Vivo Y20s', 'cái', 4690000, 1000, 7, 'a', 'https://cdn.tgdd.vn/Products/Images/42/228376/vivo-y20s-xanh-duong-1-org.jpg');
+INSERT INTO `hanghoa` VALUES (5, 'Xiaomi Mi 11 Lite', 'cái', 1000000, 100, 3, 'a', 'https://cdn.tgdd.vn/Products/Images/42/233241/xiaomi-mi-11-lite-4g-xanh-duong-1-org.jpg');
 
 -- ----------------------------
 -- Table structure for khachhang
@@ -113,7 +113,7 @@ CREATE TABLE `khachhang`  (
   `SoDienThoai` int UNSIGNED NOT NULL,
   `Email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`MSKH`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of khachhang
@@ -127,7 +127,7 @@ CREATE TABLE `loaihanghoa`  (
   `MaLoaiHang` int NOT NULL AUTO_INCREMENT,
   `TenLoaiHang` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`MaLoaiHang`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of loaihanghoa
@@ -146,16 +146,16 @@ CREATE TABLE `nhanvien`  (
   `HoTenNV` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ChucVu` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `DiaChi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `SoDienThoai` int NOT NULL,
+  `SoDienThoai` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `MatKhau` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`MSNV`) USING BTREE,
   UNIQUE INDEX `SoDienThoai`(`SoDienThoai`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of nhanvien
 -- ----------------------------
-INSERT INTO `nhanvien` VALUES (1, 'Phùng Sơn Minh Khoa', 'Tổng Giám Đốc', '294/Z Phường An Khánh, Ninh Kiều, Cần THơ', 839780791, '$2y$10$xInwxSZFfwHRu4vSl2FPwOPbb0cLtPKL4AaTZwQULhYq6uNvAciXi');
+INSERT INTO `nhanvien` VALUES (1, 'Phùng Sơn Minh Khoa', 'Tổng Giám Đốc', '294/Z Phường An Khánh, Ninh Kiều, Cần THơ', '0839780790', '$2y$10$ot0wZ4CBByHNMDXPwZg9.OwGerf0yBSDcaF4QM3aI0ZdJZJNifMaa');
 
 -- ----------------------------
 -- Triggers structure for table chitietdathang

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi" x-data="data()">
 
 <head>
 	<!-- Required meta tags -->
@@ -25,10 +25,22 @@
 		}
 	</style>
 	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-
+	<script>
+        function data() {
+            return {
+                isMenuOpen: false,
+                toggleMenu() {
+                    this.isMenuOpen = !this.isMenuOpen
+                },
+            }
+        };
+    </script>
 </head>
 
 <body class="">
+<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0&appId=1896592863957736&autoLogAppEvents=1" nonce="pjn2mit7"></script>
+	<?php require "application/views/components/header.php"; ?>
 	<div class="main">
 		<?php echo $content; ?>
 	</div>
