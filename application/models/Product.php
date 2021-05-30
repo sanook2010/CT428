@@ -7,6 +7,6 @@ use application\core\Model;
 class Product extends Model
 {
 
-    protected $table = "HangHoa";
+    protected $table = 'hanghoa';
     protected $primary_key = "MSHH";
 }

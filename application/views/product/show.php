@@ -11,7 +11,7 @@
                     <div>
                         <p class="font-bold text-2xl"><?= $product->TenHH ?></p>
                     </div>
-                    <p class="text-blue-500 text-2xl	font-bold"><?= number_format($product->Gia, 0, ',', '.') ?>đ</p>
+                    <p class="text-blue-500 text-2xl font-bold"><?= number_format($product->Gia, 0, ',', '.') ?>đ</p>
                 </div>
                 <div class="py-5 border-b-2 border-gray-300">
                     <div class="p-4 text-center bg-blue-500	w-full text-white font-bold rounded">
