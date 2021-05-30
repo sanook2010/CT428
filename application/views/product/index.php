@@ -1,27 +1,25 @@
 <section class="container">
-    <div class="flex">
-        <div class="w-1/4 border-r-2">
+    <div class="flex flex-col lg:flex-row">
+        <div class="w-full lg:w-1/4 border-r-0 lg:border-r-2">
            
             <p class="font-bold">Hãng sản xuất</p>
-            <div class="grid grid-cols-3">
+            <div class="grid grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
                
                 <?php foreach($categories as $category): ?>
-                     <!-- checkbox thì ở đây -->
                     <div class="p-2">
                         <input type="checkbox" class="mr-2 category-checkbox" onchange="filterProduct()" value="<?= $category->MaLoaiHang ?>"><?= $category->TenLoaiHang ?>    
                     </div>
-                     <!-- checkbox thì ở đây -->
                 <?php endforeach; ?>
             </div>
         </div>
-        <div class="w-3/4">
-            <div class="px-4">
+        <div class="w-full lg:w-3/4">
+            <div class="px-0 lg:px-4">
                 <p class="font-bold"><?= count($products) ?> Điện thoại</p>
                 <div class="grid grid-cols-2 lg:grid-cols-3">
                 <?php foreach ($products as $product) : ?>
 
                     <!-- Sản phẩm ở đây nè bác -->
-                    <div class="relative p-0 md:p-4" data-category="<?= $product->MaLoaiHang ?>"> 
+                    <div class="relative p-2 lg:p-4" data-category="<?= $product->MaLoaiHang ?>"> 
                         <a href="/products/<?= $product->MSHH ?>">
                             <div class="relative rounded flex justify-center items-center">
                                 <div class="aspect-w-1 aspect-h-1 w-full">
@@ -31,9 +29,9 @@
                         </a>
                         <a class="flex flex-col justify-between items-center pt-6">
                             <div>
-                                <h3 class="text-base text-secondary"><?= $product->TenHH ?></h3>
+                                <h3 class="text-xs lg:text-base font-bold"><?= $product->TenHH ?></h3>
                             </div>
-                            <span class="text-primary text-xl">
+                            <span class="text-xl">
                                 <?= number_format($product->Gia, 0, ',', '.') ?>
                             </span>
                         </a>
