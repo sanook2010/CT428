@@ -7,7 +7,7 @@ use application\core\Model;
 class User extends Model
 {
 
-    protected $table = "NhanVien";
+    protected $table = "nhanvien";
     protected $primary_key = "MSNV";
 
     public function login($SoDienThoai, $MatKhau)

@@ -3,7 +3,6 @@
 namespace application\controllers;
 
 use application\core\Controller;
-use application\models\Message;
 use application\models\Product;
 
 class MainController extends Controller
@@ -20,14 +19,6 @@ class MainController extends Controller
 	}
 	public function storeAction()
 	{
-		// var_dump($_POST);
-
-		$message = new Message;
-		($message->insert($_POST));
-		$_SESSION['message'] = 'Đăng câu hỏi thành công';
-		header('location: /');
-		exit;
-		// redirect("/");
-		// var_dump($_REQUEST);
+		
 	}
 }

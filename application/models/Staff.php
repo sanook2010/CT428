@@ -7,6 +7,6 @@ use application\core\Model;
 class Staff extends Model
 {
 
-    protected $table = "NhanVien";
+    protected $table = "nhanvien";
     protected $primary_key = "MSNV";
 }

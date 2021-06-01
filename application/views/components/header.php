@@ -21,12 +21,13 @@
                 </button>
             </div>
         </div>
-        <div class="py-4 flex">
+        <div class="py-4">
             <ul class="list-reset flex items-center">
-                <li class="mx-5"><a href="/">Trang chủ</a></li>
-                <li class="mx-5"><a href="/">Về chúng tôi</a></li>
-                <li class="mx-5"><a href="/products">Sản phẩm</a></li>
-                <li class="mx-5"><a href="/products">Liên hệ</a></li>
+                <li class="mr-10"><a href="/">Trang chủ</a></li>
+                <li class="mr-10"><a href="/">Về chúng tôi</a></li>
+                <li class="mr-10"><a href="/products">Sản phẩm</a></li>
+                <li class="mr-10"><a href="/cart">Giỏ hàng</a></li>
+                <li class="mr-10"><a href="/products">Liên hệ</a></li>
             </ul>
         </div>
     </div>
@@ -57,6 +58,7 @@
                 <li class="px-2 py-4"><a href="/">Trang chủ</a></li>
                 <li class="px-2 py-4"><a href="/">Về chúng tôi</a></li>
                 <li class="px-2 py-4"><a href="/products">Sản phẩm</a></li>
+                <li class="px-2 py-4"><a href="/cart">Giỏ hàng</a></li>
                 <li class="px-2 py-4"><a href="/products">Liên hệ</a></li>
             </ul>
         </div>

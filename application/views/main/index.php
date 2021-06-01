@@ -23,7 +23,7 @@
                             <h3 class="text-base text-secondary"><?= $product->TenHH ?></h3>
                         </div>
                         <span class="text-primary text-xl">
-                            <?= number_format($product->Gia, 0, ',', '.') ?>
+                            <?= application\core\Helper::currency($product->Gia) ?>
                         </span>
                     </a>
                 </div>

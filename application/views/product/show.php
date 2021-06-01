@@ -1,5 +1,5 @@
 
-<div class="container mx-auto max-w-screen-xl">
+<div class="container max-w-screen-xl">
  
     <section class="">
         <div class="flex flex-col md:flex-row">
@@ -11,13 +11,18 @@
                     <div>
                         <p class="font-bold text-2xl"><?= $product->TenHH ?></p>
                     </div>
-                    <p class="text-blue-500 text-2xl font-bold"><?= number_format($product->Gia, 0, ',', '.') ?>đ</p>
+                    <p class="text-blue-500 text-2xl font-bold"><?= application\core\Helper::currency($product->Gia) ?></p>
                 </div>
                 <div class="py-5 border-b-2 border-gray-300">
-                    <div class="p-4 text-center bg-blue-500	w-full text-white font-bold rounded">
-                        ĐẶT NGAY
-                    </div>
-                   
+                    <form action="/cart/store" method="POST">
+
+                        <input type="hidden" name="MSHH" value="<?= $product->MSHH ?>">
+                        <button type="submit" class="p-4 text-center bg-blue-500	w-full text-white font-bold rounded">
+                            ĐẶT NGAY
+                        </button>
+
+                        
+                    </form>
                     <div class="text-center mt-2">
                         Gọi đặt mua <a href="tel:19006067">1900.6067</a> (7:30 - 22:00)
                     </div>

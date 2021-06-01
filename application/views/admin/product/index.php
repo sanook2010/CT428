@@ -26,7 +26,7 @@
                             <?= $product->TenHH ?>
                         </td>
                         <td class="px-4 py-3 text-sm">
-                            <?= number_format($product->Gia, 0, ',', '.') ?>
+                            <?= application\core\Helper::currency($product->Gia) ?>
                         </td>
                         <td class="px-4 py-3 text-sm">
                             <?= $product->SoLuongHang ?>

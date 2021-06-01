@@ -16,9 +16,26 @@ return [
 		'controller' => 'product',
 		'action' => 'index',
 	],
+
+	'cart' => [
+		'controller' => 'cart',
+		'action' => 'index',
+	],
 	
-
-
+	'cart/store' => [
+		'controller' => 'cart',
+		'action' => 'store',
+	],
+	
+	'order/store' => [
+		'controller' => 'order',
+		'action' => 'store',
+	],
+	
+	'order/success' => [
+		'controller' => 'page',
+		'action' => 'order',
+	],
 	// auth
 	'admin/login' => [
 		'controller' => 'auth',
