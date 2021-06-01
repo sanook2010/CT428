@@ -24,10 +24,10 @@
         <div class="py-4">
             <ul class="list-reset flex items-center">
                 <li class="mr-10"><a href="/">Trang chủ</a></li>
-                <li class="mr-10"><a href="/">Về chúng tôi</a></li>
+                <li class="mr-10"><a href="/about">Về chúng tôi</a></li>
                 <li class="mr-10"><a href="/products">Sản phẩm</a></li>
                 <li class="mr-10"><a href="/cart">Giỏ hàng</a></li>
-                <li class="mr-10"><a href="/products">Liên hệ</a></li>
+                <li class="mr-10"><a href="/contact">Liên hệ</a></li>
             </ul>
         </div>
     </div>
@@ -56,10 +56,10 @@
         <div class="container mx-auto max-w-screen-xl">
             <ul class="flex flex-col text-white font-bold text-lg">
                 <li class="px-2 py-4"><a href="/">Trang chủ</a></li>
-                <li class="px-2 py-4"><a href="/">Về chúng tôi</a></li>
+                <li class="px-2 py-4"><a href="/about">Về chúng tôi</a></li>
                 <li class="px-2 py-4"><a href="/products">Sản phẩm</a></li>
                 <li class="px-2 py-4"><a href="/cart">Giỏ hàng</a></li>
-                <li class="px-2 py-4"><a href="/products">Liên hệ</a></li>
+                <li class="px-2 py-4"><a href="/contact">Liên hệ</a></li>
             </ul>
         </div>
     </div>

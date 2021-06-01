@@ -61,18 +61,18 @@
                             <strong>Thông tin người nhận</strong>
                         </div>
                         <div class="mb-4 flex flex-col lg:flex-row">
-                            <div class="w-2/3 mx-2">
+                            <div class="w-full lg:w-2/3 mx-2 mb-2 md:mb-0">
                                 <input name="HoTenKH" type="text" class="w-full p-2 border focus:outline-none focus:ring focus:border-blue-500" placeholder="Họ và tên (*)" required>
                             </div>
-                            <div class="w-1/3 mx-2">
+                            <div class="w-full lg:w-1/3 mx-2 mb-2 md:mb-0">
                                 <input name="SoDienThoai" type="text" class="w-full p-2 border focus:outline-none focus:ring focus:border-blue-500" placeholder="Số điện thoại (*)" required>
                             </div>
                         </div>
                         <div class="mb-4 flex flex-col lg:flex-row">
-                            <div class="w-1/2 mx-2">
+                            <div class="w-full lg:w-1/2 mx-2 mb-2 md:mb-0">
                                 <input name="Email" type="text" class="w-full p-2 border focus:outline-none focus:ring focus:border-blue-500" placeholder="Email">
                             </div>
-                            <div class="w-1/2 mx-2">
+                            <div class="w-full lg:w-1/2 mx-2 mb-2 md:mb-0">
                                 <input name="TenCongTy" type="text" class="w-full p-2 border focus:outline-none focus:ring focus:border-blue-500" placeholder="Tên công ty">
                             </div>
                         </div>

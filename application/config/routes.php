@@ -2,11 +2,14 @@
 
 return [
 
+	// home page
 	'' => [
 		'controller' => 'main',
 		'action' => 'index',
 	],
 
+
+	// product
 	'products/{id:\d+}' => [
 		'controller' => 'product',
 		'action' => 'show',
@@ -17,6 +20,7 @@ return [
 		'action' => 'index',
 	],
 
+	//cart
 	'cart' => [
 		'controller' => 'cart',
 		'action' => 'index',
@@ -31,11 +35,26 @@ return [
 		'controller' => 'order',
 		'action' => 'store',
 	],
-	
+
+
+	// Page
 	'order/success' => [
 		'controller' => 'page',
 		'action' => 'order',
 	],
+
+	'contact' => [
+		'controller' => 'page',
+		'action' => 'contact',
+	],
+
+	'about' => [
+		'controller' => 'page',
+		'action' => 'about',
+	],
+
+
+
 	// auth
 	'admin/login' => [
 		'controller' => 'auth',
