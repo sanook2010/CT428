@@ -12,6 +12,11 @@ class Request
 
     public function post($data)
     {
-        return $_POST[$data];
+        return $this->defined_map($_POST[$data], (string)" ");
+    }
+
+    function defined_map($value, $default) {
+        return (!isset($value) || is_null($value)) ? $default : $value;
+        // or return $value ? $default : $value;
     }
 }

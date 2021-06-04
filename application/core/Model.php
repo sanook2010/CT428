@@ -38,8 +38,16 @@ abstract class Model
 	{
 
 		$columnString = implode(', ', array_keys($data));
-		$valueString = ":" . implode(', :', array_flip($data));
-		return $this->db->query("INSERT INTO `{$this->table}` ({$columnString}) VALUES ({$valueString})", $data);
+		$valueString = null;
+		$valueString = null;
+		foreach($data as $key => $value)
+		{
+			$valueString .= " :{$key},";
+		}
+		$valueString = rtrim($valueString, ", ");
+
+		$this->db->query("INSERT INTO `{$this->table}` ({$columnString}) VALUES ({$valueString})", $data);
+		return $this->db->lastInsertId();
 	}
 
 	public function findOrFail($id)
@@ -71,4 +79,5 @@ abstract class Model
 		$params[$this->primary_key] = $id;
 		$this->db->query("DELETE FROM `{$this->table}` WHERE `{$this->primary_key}` = :{$this->primary_key}", $params);
 	}
+
 }

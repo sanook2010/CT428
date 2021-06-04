@@ -45,10 +45,9 @@ class AdminProductController extends Controller
             "QuyCach"      => $this->request->post("QuyCach"),
             "GhiChu"      => $this->request->post("GhiChu"),
         ];
-        // var_dump($input);
         var_dump($this->product->insert($input));
-        // $_SESSION['message'] = 'Đăng sản phẩm thành công';
-        // $this->view->redirect('/admin/products');
+        $_SESSION['message'] = 'Đăng sản phẩm thành công';
+        $this->view->redirect('/admin/products');
     }
     public function editAction()
     {

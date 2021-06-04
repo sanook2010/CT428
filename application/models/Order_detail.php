@@ -4,7 +4,7 @@ namespace application\models;
 
 use application\core\Model;
 
-class Cart extends Model
+class Order_detail extends Model
 {
 
     protected $table = "chitietdathang";

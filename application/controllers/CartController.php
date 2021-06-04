@@ -15,7 +15,6 @@ class CartController extends Controller
 	{
 		parent::__construct($route);
 		$this->product = new Product;
-		$this->cart = new Cart;
 	}
 	public function indexAction()
 	{

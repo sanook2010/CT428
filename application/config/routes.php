@@ -153,4 +153,30 @@ return [
 		'controller' => 'adminProduct',
 		'action' => 'destroy',
 	],
+
+	//Order
+	'admin/orders' => [
+		'controller' => 'adminOrder',
+		'action' => 'index',
+	],
+	'admin/orders/create' => [
+		'controller' => 'adminOrder',
+		'action' => 'create',
+	],
+	'admin/orders/store' => [
+		'controller' => 'adminOrder',
+		'action' => 'store',
+	],
+	'admin/orders/edit/{id:\d+}' => [
+		'controller' => 'adminOrder',
+		'action' => 'edit',
+	],
+	'admin/orders/update/{id:\d+}' => [
+		'controller' => 'adminOrder',
+		'action' => 'update',
+	],
+	'admin/orders/destroy/{id:\d+}' => [
+		'controller' => 'adminOrder',
+		'action' => 'destroy',
+	],
 ];
