@@ -7,4 +7,10 @@ class Helper{
     {
         return number_format($price, 0, ',', '.' ) . " đ";
     }
+
+    public static function redirect($url)
+	{
+		header('location: ' . $url);
+		exit;
+	}
 }

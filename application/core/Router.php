@@ -3,6 +3,7 @@
 namespace application\core;
 
 use application\core\View;
+use application\core\Helper;
 
 class Router
 {
@@ -55,13 +56,13 @@ class Router
                     $controller = new $path($this->params);
                     $controller->$action();
                 } else {
-                    View::errorCode(404);
+                    Helper::redirect('/');
                 }
             } else {
-                View::errorCode(404);
+                Helper::redirect('/');
             }
         } else {
-            View::errorCode(404);
+            Helper::redirect('/');
         }
     }
 }
