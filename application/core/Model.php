@@ -15,23 +15,36 @@ abstract class Model
 	{
 		$this->db = new Db;
 	}
+	
+
+	public function select()
+	{
+		return "SELECT * FROM `{$this->table}`";
+	}
 	public function all()
 	{
-		return $this->db->row("SELECT * FROM `{$this->table}`");
+		return $this->db->row($this->select());
+	}
+
+
+	public function orderBy($column, $direction = 'asc')
+	{
+		return $this->db->row("$this->select() ORDER BY `{$column}` $direction");
 	}
 
 	public function find($value)
 	{
-		return $this->db->first("SELECT * FROM `{$this->table}` WHERE `{$this->primary_key}` = {$value} LIMIT 1");
+		return $this->db->first("$this->select() WHERE `{$this->primary_key}` = {$value} LIMIT 1");
 	}
 
 	public function where($key, $value)
 	{
-		return $this->db->row("SELECT * FROM `{$this->table}` WHERE `{$key}` = {$value}");
+		return $this->db->row("$this->select() WHERE `{$key}` = {$value}");
 	}
+	
 	public function firstWhere($key, $value)
 	{
-		return $this->db->first("SELECT * FROM `{$this->table}` WHERE `{$key}` = {$value}");
+		return $this->db->first("$this->select() WHERE `{$key}` = {$value}");
 	}
 
 	public function insert($data)

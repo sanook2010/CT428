@@ -17,7 +17,12 @@ class AdminOrderController extends Controller
     }
     public function indexAction()
     {
-        
+        $orders = $this->order->getOrder();
+        $data = [
+            'orders' => $orders
+        ];
+        // debug($orders);
+        $this->view->render('admin/order/index', 'Quản lý đơn hàng', $data);
     }
     public function createAction()
     {

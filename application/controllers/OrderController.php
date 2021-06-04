@@ -53,17 +53,22 @@ class OrderController extends Controller
             
             $address = $this->request->post("DiaChi");
 
+
+            // Kiểm tra khách hàng có trong bảng khách hàng chưa
             $customer = $this->customer->firstWhere('SoDienThoai', $input['SoDienThoai']);
 
-            if($customer == null)
+            // nếu chưa thì thêm vào
+            if($customer == null) 
             {
                 $customerId = $this->customer->insert($input); // thêm vào database và lấy ra id
                 
                 $customer = $this->customer->find($customerId);
             }
+
+            //Thêm địa chỉ
             $this->addAddress($customer, $address);
             
-
+            //Thêm bản đặt hàng
             $orderData  = [
                 "MSKH" => $customer->MSKH,
             ];
@@ -71,7 +76,7 @@ class OrderController extends Controller
             $orderDataID = $this->order->insert($orderData);
 
 
-
+            //Thêm bảng chi tiết đặt hàng
             foreach($_SESSION['GioHangTemp'] as $cart)
             {
                 $orderDetailData = [
