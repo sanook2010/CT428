@@ -1,12 +1,6 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 103.124.94.177
- Source Server Type    : MySQL
- Source Server Version : 100505
- Source Host           : 103.124.94.177:3306
- Source Schema         : zhs_khoathpdf1w
-
  Target Server Type    : MySQL
  Target Server Version : 100505
  File Encoding         : 65001
