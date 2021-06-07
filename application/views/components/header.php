@@ -1,26 +1,21 @@
 <div class="hidden sm:block container mx-auto max-w-screen-xl relative">
     <div class="shadow-xs z-50 py-4 relative">
         <div class="flex justify-between items-center">
-            <div class="ml-8">
-                <button class="border-transparent hover:border-purple-400 border-2 rounded-full p-2 sm:p-4 transition-colors  focus:outline-none">
-                    <svg class="h-10 w-10 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8" />
-                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                    </svg>
-                </button>
-
-            </div>
+            
             <div>
                 <img src="/public/images/logo/ctu.png" alt="logo" class="w-28 h-auto">
             </div>
             <div class="mr-8">
-                <button class="border-transparent hover:border-purple-400 border-2 rounded-full p-2 sm:p-4 transition-colors  focus:outline-none">
-                    <svg class="h-10 w-10 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
-                </button>
+                <a href="/cart">
+                    <button class="border-transparent hover:border-purple-400 border-2 rounded-full p-2 sm:p-4 transition-colors  focus:outline-none">
+                        <svg class="h-10 w-10 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                    </button>
+                </a>
             </div>
         </div>
+       
         <div class="py-4">
             <ul class="list-reset flex items-center">
                 <li class="mr-10"><a href="/">Trang chủ</a></li>

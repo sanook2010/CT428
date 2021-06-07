@@ -67,11 +67,11 @@ return [
 
 	//
 	'admin/index' => [
-		'controller' => 'adminDashboard',
+		'controller' => 'adminOrder',
 		'action' => 'index',
 	],
 	'admin' => [
-		'controller' => 'adminDashboard',
+		'controller' => 'adminOrder',
 		'action' => 'index',
 	],
 

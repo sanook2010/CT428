@@ -17,7 +17,8 @@ abstract class Controller
 	{
 		$this->route = $route;
 		if (!$this->checkAcl()) {
-			View::errorCode(403);
+			// View::errorCode(403);
+			Helper::redirect('/admin/login');
 		}
 		$this->view = new View($route);
 		$this->request = new Request;

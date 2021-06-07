@@ -15,6 +15,8 @@ class AdminProductController extends Controller
         $this->view->layout = 'admin';
         $this->product = new Product;
         $this->category = new Category;
+
+        
     }
 
     public function indexAction()
@@ -36,6 +38,11 @@ class AdminProductController extends Controller
 
     public function storeAction()
     {
+
+       
+
+
+
         $input = [
             "MSHH"      => $this->request->post("MSHH"),
             "TenHH"     => $this->request->post("TenHH"),

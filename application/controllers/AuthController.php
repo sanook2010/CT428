@@ -3,12 +3,12 @@
 namespace application\controllers;
 
 use application\core\Controller;
-use application\models\User;
+use application\models\Staff;
 
 class AuthController extends Controller
 {
 
-	protected $user;
+	protected $staff;
 	public function __construct($route)
 	{
 		parent::__construct($route);
@@ -26,15 +26,17 @@ class AuthController extends Controller
 	public function loginAction()
 	{
 		if (!empty($_POST)) {
-			$this->user = new User;
+			$this->staff = new Staff;
 
 			$MatKhau = $this->request->post('MatKhau');
 			$SoDienThoai = $this->request->post('SoDienThoai');
-
-			$user =  $this->user->login($SoDienThoai, $MatKhau);
-			if ($user) {
+			
+			$staff =  $this->staff->login($SoDienThoai, $MatKhau);
+		
+			if ($staff) {
 				$_SESSION['admin'] = true;
-				$this->view->redirect('/');
+				$_SESSION['admin']['id'] = $staff->MSNV;
+				$this->view->redirect('/admin');
 			}
 			$this->view->redirect('/admin/login');
 		}

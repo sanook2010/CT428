@@ -26,6 +26,7 @@ class AdminOrderController extends Controller
     }
     public function createAction()
     {
+
     }
     public function storeAction()
     {
@@ -33,11 +34,24 @@ class AdminOrderController extends Controller
     }
     public function editAction()
     {
-       
+        $order_user = $this->order->getUserById($this->route['id']);
+        $order_products = $this->order->getAllProductsById($this->route['id']);
+        $data = [
+            'order_user' => $order_user,
+            'order_products' => $order_products
+        ];
+        $this->view->render('admin/order/edit', 'Quản lý đơn hàng', $data);  
     }
     public function updateAction()
     {
-       
+        $input = [
+            "MSNV" => $_SESSION['admin']['id'],
+            "NgayGH" => date('Y-m-d H:i:s')
+        ];
+
+        $this->order->update($input, $this->route['id']);
+        $_SESSION['message'] = "Sửa cập nhật đơn hàng #{$this->route['id']}";
+        $this->view->redirect('/admin/orders');
     }
 
     public function destroyAction()

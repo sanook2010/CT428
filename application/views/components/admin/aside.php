@@ -5,12 +5,11 @@
         </div>
         <ul>
             <li class="relative px-6 py-3">
-                <!-- <div class="absolute inset-y-0 left-0 w-1 bg-purple-400 rounded-tr-lg rounded-br-lg"></div> -->
-                <?php if ($this->route['controller'] == "adminDashboard") : ?>
+                <?php if ($this->route['controller'] == "adminOrder") : ?>
                     <div class="absolute inset-y-0 left-0 w-1 bg-purple-400 rounded-tr-lg rounded-br-lg"></div>
                 <?php endif; ?>
-                <a href="/admin" class="inline-flex items-center w-full text-sm font-semibold">
-                    <i class="fas fa-home"></i><span class="ml-4">Bảng điều khiển</span>
+                <a href="/admin/orders/" class="inline-flex items-center w-full text-sm font-semibold">
+                <i class="fas fa-cart-plus"></i><span class="ml-4">Đơn hàng</span>
                 </a>
             </li>
             <li class="relative px-6 py-3">
@@ -48,14 +47,7 @@
                     <i class="fas fa-users"></i><span class="ml-4">Nhân viên</span>
                 </a>
             </li>
-            <li class="relative px-6 py-3">
-                <?php if ($this->route['controller'] == "adminOrder") : ?>
-                    <div class="absolute inset-y-0 left-0 w-1 bg-purple-400 rounded-tr-lg rounded-br-lg"></div>
-                <?php endif; ?>
-                <a href="/admin/orders" class="inline-flex items-center w-full text-sm font-semibold">
-                <i class="fas fa-cart-plus"></i><span class="ml-4">Đơn hàng</span>
-                </a>
-            </li>
+            
         </ul>
     </div>
 </aside>

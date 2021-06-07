@@ -1,3 +1,5 @@
+<?php require "application/views/components/message.php"; ?>
+
 <div class="w-full overflow-hidden rounded shadow mt-4">
     <div class="w-full overflow-x-auto">
         <table class="w-full whitespace-no-wrap">
@@ -40,7 +42,7 @@
                         </td>
                         <td class="px-4 py-3 text-sm">
                             <div class="flex items-center space-x-4 text-sm">
-                                <a href="/admin/orders/edit/">
+                                <a href="/admin/orders/edit/<?= $order->SoDonDH ?>">
                                     <button class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-400 rounded-lg  focus:outline-none focus:shadow-outline-gray">
                                        Xem chi tiết
                                     </button>

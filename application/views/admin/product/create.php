@@ -2,7 +2,7 @@
     Thông tin sản phẩm
 </h4>
 <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md  w-full md:w-2/4">
-    <form action="/admin/products/store" method="POST">
+    <form action="/admin/products/store" method="POST" enctype="multipart/form-data">
         <label class="block mt-4 text-sm">
             <span class="text-gray-700">
                 Loại sản phẩm
@@ -14,10 +14,7 @@
             </select>
         </label>
 
-        <label class="block text-sm mt-4">
-            <span class="text-gray-700">Mã số sản phẩm</span>
-            <input class="block w-full mt-1 text-sm border-gray-400 border-2 rounded focus:outline-none p-2" required name="MSHH" placeholder="iphone10">
-        </label>
+     
         <label class="block text-sm mt-4">
             <span class="text-gray-700">Tên sản phẩm</span>
             <input class="block w-full mt-1 text-sm border-gray-400 border-2 rounded focus:outline-none p-2" required name="TenHH" placeholder="iPhone 10">
@@ -38,6 +35,10 @@
         <label class="block text-sm mt-4">
             <span class="text-gray-700">Ghi chú</span>
             <textarea class="block w-full mt-1 text-sm border-gray-400 border-2 rounded focus:outline-none p-2" name="GhiChu"></textarea>
+        </label>
+        <label class="block text-sm mt-4">
+            <span class="text-gray-700">Hình ảnh</span>
+            <input type="file" name="HinhAnh" value="" />
         </label>
         <button class="mt-4 bg-purple-400 p-2 text-white" type="submit">
             Thêm sản phẩm

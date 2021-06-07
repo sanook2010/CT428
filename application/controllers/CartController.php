@@ -4,12 +4,11 @@ namespace application\controllers;
 
 use application\core\Controller;
 use application\models\Product;
-use application\models\Cart;
+
 class CartController extends Controller
 {
 
 	private $product;
-	private $cart;
 
 	public function __construct($route)
 	{
